@@ -15,12 +15,12 @@ const authors = [
         id: 'dan-wahlin',
         firstName: 'Dan',
         lastName: 'Wahlin'
-    },
+    }
 ];
 
 const generateId = (author) => {
     return author.firstName.toLowerCase() + '-' + author.lastName.toLowerCase();
-}
+};
 
 class AuthorApi {
     static getAllAuthors(){
@@ -36,11 +36,11 @@ class AuthorApi {
             setTimeout(()=>{
                 const minAuthorNameLength= 3;
                 if(author.firstName.length < minAuthorNameLength){
-                    reject(`First name must be at least ${minAuthorNameLength} characters. `)
+                    reject(`First name must be at least ${minAuthorNameLength} characters. `);
                 }
 
-                if(author.lastName.length < minAuthorNameLengh){
-                    reject(`Last name must be at least ${minAuthorNameLength} characters. `)
+                if(author.lastName.length < minAuthorNameLength){
+                    reject(`Last name must be at least ${minAuthorNameLength} characters. `);
                 }
 
                 if(author.id){
@@ -53,8 +53,8 @@ class AuthorApi {
 
                 resolve(author);
 
-            },delay)
-        })
+            },delay);
+        });
     }
 
     static deleteAuthor(authorId){
